@@ -29,13 +29,13 @@
 <body>
 
 <div class="container">
-    <h1>Click the button below to close this page</h1>
-    <button class="close-button" onclick="closeFrame()">Close Frame</button>
+    <h1>Click the button below to close all windows</h1>
+    <button class="close-button" onclick="closeAllWindows()">Close All</button>
 </div>
 
 <script>
-function closeFrame() {
-    window.parent.postMessage('close', '*'); // Sends a message to the parent window to close the iframe
+function closeAllWindows() {
+    window.top.close(); // This will attempt to close all windows, including iframes
 }
 </script>
 
