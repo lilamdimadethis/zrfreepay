@@ -30,12 +30,12 @@
 
 <div class="container">
     <h1>Click the button below to close this page</h1>
-    <button class="close-button" onclick="closePage()">Close Page</button>
+    <button class="close-button" onclick="closeFrame()">Close Frame</button>
 </div>
 
 <script>
-function closePage() {
-    window.close(); // This will close the current tab/window
+function closeFrame() {
+    window.parent.postMessage('close', '*'); // Sends a message to the parent window to close the iframe
 }
 </script>
 
